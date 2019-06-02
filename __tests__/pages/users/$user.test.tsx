@@ -1,13 +1,12 @@
-import { render, cleanup, waitForElement } from '@testing-library/react';
-import { createRouter } from 'next/router';
+import { render, cleanup } from '@testing-library/react';
 import { RouterContext } from 'next-server/dist/lib/router-context';
 
-const router = createRouter('', { user: 'nikita' }, '', {
-  initialProps: {},
-  pageLoader: jest.fn(),
-  App: jest.fn(),
-  Component: jest.fn(),
-});
+const router = {
+  pathname: '/users/$user',
+  route: '/users/$user',
+  query: { user: 'nikita' },
+  asPath: '/users/nikita',
+};
 
 import UserInfo from '../../../pages/users/$user';
 
@@ -20,5 +19,5 @@ it('Should render correctly on route: /users/nikita', async () => {
     </RouterContext.Provider>,
   );
 
-  await waitForElement(() => getByText(/Hello nikita!/i));
+  expect(getByText(/Hello nikita!/i)).toBeTruthy();
 });
