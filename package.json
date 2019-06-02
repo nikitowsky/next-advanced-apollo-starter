@@ -16,7 +16,7 @@
     "@types/react-dom": "^16.8.4",
     "@zeit/next-sass": "^1.0.1",
     "jest": "^24.8.0",
-    "next": "^8.1.1-canary.42",
+    "next": "8.1.1-canary.43",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
