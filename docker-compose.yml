@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: web_production
+    build: .
+    environment:
+      APP_ENV: production
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_production
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 3000:80
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
