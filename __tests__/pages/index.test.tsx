@@ -1,11 +1,11 @@
-import { render, cleanup, waitForElement } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 
 import Index from '../../pages/index';
 
 afterEach(cleanup);
 
-it('Should render Index page without crash', async () => {
+it('Should render Index page without crash', () => {
   const { getByText } = render(<Index />);
 
-  await waitForElement(() => getByText(/Hello world!/i));
+  expect(getByText(/Hello world!/i)).toBeTruthy();
 });

@@ -1,6 +1,8 @@
 import { render, cleanup } from '@testing-library/react';
 import { RouterContext } from 'next-server/dist/lib/router-context';
 
+import UserInfo from '../../../pages/users/[user]';
+
 const router = {
   pathname: '/users/[user]',
   route: '/users/[user]',
@@ -8,11 +10,9 @@ const router = {
   asPath: '/users/nikita',
 };
 
-import UserInfo from '../../../pages/users/[user]';
-
 afterEach(cleanup);
 
-it('Should render correctly on route: /users/nikita', async () => {
+it('Should render correctly on route: /users/nikita', () => {
   const { getByText } = render(
     <RouterContext.Provider value={router}>
       <UserInfo />
