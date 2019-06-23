@@ -10,20 +10,21 @@
   },
   "dependencies": {
     "@testing-library/react": "^8.0.1",
-    "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.4",
-    "@types/react": "^16.8.19",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@zeit/next-sass": "^1.0.1",
     "jest": "^24.8.0",
-    "next": "8.1.1-canary.43",
+    "next": "8.1.1-canary.55",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "typescript": "^3.5.1"
+    "typescript": "^3.5.2"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "prettier": "^1.18.2",
+    "webpack": "^4.35.0"
   }
 }
