@@ -4,10 +4,7 @@ import { RouterContext } from 'next-server/dist/lib/router-context';
 import UserInfo from '../../../pages/users/[user]';
 
 const router = {
-  pathname: '/users/[user]',
-  route: '/users/[user]',
   query: { user: 'nikita' },
-  asPath: '/users/nikita',
 };
 
 afterEach(cleanup);
