@@ -1,8 +1,7 @@
 import React from 'react';
-import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-const UserInfo: NextPage = () => {
+const UserInfo = () => {
   const router = useRouter();
   const { query } = router;
 
