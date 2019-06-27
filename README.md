@@ -2,7 +2,7 @@
 
 ## What you get
 
-- Includes latest [Next.js](https://nextjs.org/) version (at the moment: **v8.1.1-canary.60**) with built-in **dynamic routing** (_which is **not** experimental now!_),
+- Includes latest [Next.js](https://nextjs.org/) version (at the moment: **v8.1.1-canary.61**) with built-in **dynamic routing** (_which is **not** experimental now!_),
 - TypeScript,
 - Sass/SCSS for styling,
 - Testing environment via [Jest](https://jestjs.io/) and [react-testing-library](https://testing-library.com/docs/react-testing-library/intro),
