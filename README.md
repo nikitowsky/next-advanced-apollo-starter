@@ -1,24 +1,44 @@
-# Next.js TypeScript starter w/ Docker
+# Next.js Apollo TypeScript Starter With Docker
 
 ## What you get
 
-- Includes latest [Next.js](https://nextjs.org/) version (at the moment: **v8.1.1-canary.63**) with built-in **dynamic routing** (_which is **not** experimental now!_),
-- TypeScript,
-- Sass/SCSS for styling,
-- Testing environment via [Jest](https://jestjs.io/) and [react-testing-library](https://testing-library.com/docs/react-testing-library/intro),
-- Debugging configuration for VSCode,
-- Docker configuration to serve production build with Nginx.
+- Latest [Next.js](https://nextjs.org/) version.
+- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client.
+- Configured [TypeScript](https://www.typescriptlang.org/) environment.
+- Configured [Sass/SCSS](https://sass-lang.com/) via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
+
+### Developer Experience
+
+- Testing environment via [Jest](https://jestjs.io/) and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
+- [Prettier](https://prettier.io/) for code formatting.
+- Debug configuration for [VSCode](https://code.visualstudio.com/).
+- [Docker](https://www.docker.com/) configuration to serve **production-ready** build with Nginx.
 
 ## Getting started
 
-Everything you need to know you can find in [Next.js](https://nextjs.org/) documentation.
+### Start development server
+
+```bash
+yarn
+yarn start
+```
+
+### Run tests
+
+Run tests located in `__tests__` directory:
+
+```bash
+yarn test
+```
+
+---
+
+Pretty much everything you need to know you can find in [Next.js documentation](https://nextjs.org/docs).
 
 ## Docker
 
-To build and run Dockerized production build, simply run:
+Build and run Dockerized **production-ready** build, run:
 
 ```bash
 docker-compose up --build
 ```
-
-And that's it!
