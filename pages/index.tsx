@@ -1,17 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const Index = () => (
-  <div>
-    Hello world! You're running server in <i>{process.env.APP_ENV}</i> mode!
-    <br />
-    You can set-up <b>process.env.APP_ENV</b> variable in <b>next.config.js</b>.
-    <br />
-    Here is base routing:{' '}
-    <Link href="/users">
-      <a>List of users...</a>
-    </Link>
-  </div>
-);
+const Index = () => <div>Hello world!</div>;
 
 export default Index;
