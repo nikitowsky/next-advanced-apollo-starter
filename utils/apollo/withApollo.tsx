@@ -54,6 +54,7 @@ export default (App: any) => {
       (ctx.ctx as NextPageContext & NextApolloContext).apolloClient = apollo;
 
       let appProps = {};
+
       if (App.getInitialProps) {
         appProps = await App.getInitialProps(ctx);
       }
