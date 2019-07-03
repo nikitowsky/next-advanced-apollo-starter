@@ -4866,10 +4866,10 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-next-server@8.1.1-canary.64:
-  version "8.1.1-canary.64"
-  resolved "https://registry.yarnpkg.com/next-server/-/next-server-8.1.1-canary.64.tgz#6eacf9c3a005dddb1699ad69a888c4d790b6c531"
-  integrity sha512-c7WOahXj/9AFOuF0OitCfnXuVOI9G+BpzxSnMJ5Kl1rCR7ScKWhTifw++A60P7O9qgZpMC8olQuC8R/8KTU7Dw==
+next-server@8.1.1-canary.66:
+  version "8.1.1-canary.66"
+  resolved "https://registry.yarnpkg.com/next-server/-/next-server-8.1.1-canary.66.tgz#f577d1faff1aa84c9fe74b3e0dc126641e04f2b6"
+  integrity sha512-TjCrEU0H+KL3OpU+mYja4N4gJ7P+3rBdiFFCGiPhw3KNBx5pkbUYa0esTT+hfMUqCaxrDfV7LkElFUTDAa3sEg==
   dependencies:
     amp-toolbox-optimizer "1.2.0-alpha.1"
     content-type "1.0.4"
@@ -4885,10 +4885,10 @@ next-server@8.1.1-canary.64:
     styled-jsx "3.2.1"
     url "0.11.0"
 
-next@8.1.1-canary.64:
-  version "8.1.1-canary.64"
-  resolved "https://registry.yarnpkg.com/next/-/next-8.1.1-canary.64.tgz#66226afcbe7d7a3a3acef35ac21f3442326bedee"
-  integrity sha512-D1eaHJcREMLl+Zi9gnYGxMPS9+NsiHFffJZll3jxW6/mQPZaDkZSLYQ7a7hvvpYO6a8w5Z3PPgGm+jUA8R6esw==
+next@8.1.1-canary.66:
+  version "8.1.1-canary.66"
+  resolved "https://registry.yarnpkg.com/next/-/next-8.1.1-canary.66.tgz#4c0b860daecdbcf29c1520cc4fee31c59c3433b9"
+  integrity sha512-vfHhuYMrZY0wEfQG6VtaQTgDiROiEO5w6bkehengjjaXVlQKRRWpsP3JRwUOVq+XLvacLcu+A3jf8rBO2oQ6eQ==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/plugin-proposal-class-properties" "7.4.4"
@@ -4916,7 +4916,7 @@ next@8.1.1-canary.64:
     launch-editor "2.2.1"
     loader-utils "1.2.3"
     mkdirp "0.5.1"
-    next-server "8.1.1-canary.64"
+    next-server "8.1.1-canary.66"
     prop-types "15.7.2"
     prop-types-exact "1.2.0"
     react-error-overlay "5.1.6"
