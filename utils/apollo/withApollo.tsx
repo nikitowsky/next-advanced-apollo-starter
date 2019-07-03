@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { NextPageContext } from 'next';
+import { AppContext, AppProps } from 'next/app';
 import Head from 'next/head';
-import { AppContext } from 'next/app';
 import { getDataFromTree } from 'react-apollo';
 import ApolloClient from 'apollo-client';
 import { NormalizedCacheObject } from 'apollo-cache-inmemory';
@@ -10,8 +9,10 @@ import cookie from 'cookie';
 
 import initApollo from './initApollo';
 import isBrowser from './isBrowser';
+import { NextPageContext } from 'next';
 
-export interface NextApolloContext {
+export interface NextApolloAppProps {
+  apolloState?: NormalizedCacheObject;
   apolloClient: ApolloClient<NormalizedCacheObject>;
 }
 
@@ -26,7 +27,7 @@ export default (App: any) => {
   return class WithData extends Component {
     apolloClient: ApolloClient<NormalizedCacheObject>;
 
-    constructor(props: any) {
+    constructor(props: AppProps & NextApolloAppProps) {
       super(props);
 
       // `getDataFromTree` renders the component first, the client is passed off as a property.
@@ -51,7 +52,7 @@ export default (App: any) => {
         },
       );
 
-      (ctx.ctx as NextPageContext & NextApolloContext).apolloClient = apollo;
+      (ctx.ctx as NextPageContext & NextApolloAppProps).apolloClient = apollo;
 
       let appProps = {};
 
