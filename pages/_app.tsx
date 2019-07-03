@@ -4,9 +4,9 @@ import { ApolloProvider } from 'react-apollo';
 
 import './_app.scss';
 import { withApollo } from '../utils/apollo';
-import { NextApolloContext } from '../utils/apollo/withApollo';
+import { NextApolloAppProps } from '../utils/apollo/withApollo';
 
-class MyApp extends App<NextApolloContext> {
+class MyApp extends App<NextApolloAppProps> {
   render() {
     const { Component, pageProps, apolloClient } = this.props;
 
