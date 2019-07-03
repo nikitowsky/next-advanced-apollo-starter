@@ -2,6 +2,8 @@
 
 ## What you get
 
+### Features
+
 - Latest [Next.js](https://nextjs.org/) version.
 - GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client.
 - Configured [TypeScript](https://www.typescriptlang.org/) environment.
