@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "next",
+    "start": "node server.js",
     "build": "next build",
-    "serve": "next start",
+    "serve": "NODE_ENV=production node server.js",
     "test": "jest"
   },
   "dependencies": {
@@ -23,10 +23,12 @@
     "apollo-link-context": "1.0.18",
     "apollo-link-http": "1.5.15",
     "cookie": "0.4.0",
+    "express": "^4.17.1",
     "graphql": "14.4.2",
     "graphql-tag": "2.10.1",
     "jest": "24.8.0",
-    "next": "8.1.1-canary.68",
+    "next": "8.1.1-canary.69",
+    "next-i18next": "^0.45.0",
     "node-fetch": "2.6.0",
     "node-sass": "4.12.0",
     "normalize.css": "8.0.1",

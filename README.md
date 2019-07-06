@@ -5,7 +5,8 @@
 ### Features
 
 - Latest [Next.js](https://nextjs.org/) version.
-- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client.
+- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with build-in [JWT](https://jwt.io/) authentication.
+- Localization via [i18next](https://github.com/isaachinman/next-i18next/).
 - Configured [TypeScript](https://www.typescriptlang.org/) environment.
 - Configured [Sass/SCSS](https://sass-lang.com/) via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
 

@@ -5,8 +5,24 @@ import { ApolloProvider } from 'react-apollo';
 import './_app.scss';
 import { withApollo } from '../utils/apollo';
 import { NextApolloAppProps } from '../utils/apollo/withApollo';
+import { appWithTranslation } from '../utils/i18n';
 
 class MyApp extends App<NextApolloAppProps> {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return {
+      pageProps: {
+        namespacesRequired: [],
+        ...pageProps,
+      },
+    };
+  }
+
   render() {
     const { Component, pageProps, apolloClient } = this.props;
 
@@ -20,4 +36,4 @@ class MyApp extends App<NextApolloAppProps> {
   }
 }
 
-export default withApollo(MyApp);
+export default appWithTranslation(withApollo(MyApp));

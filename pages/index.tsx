@@ -1,5 +1,15 @@
 import React from 'react';
 
-const Index = () => <div>Hello world!</div>;
+import { useTranslation } from '../utils/i18n';
+
+const Index = () => {
+  const [t] = useTranslation('common');
+
+  return <div>{t('greeting')}</div>;
+};
+
+Index.getInitialProps = () => ({
+  namespacesRequired: ['common'],
+});
 
 export default Index;
