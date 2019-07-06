@@ -4,6 +4,7 @@ import Index from '../../pages/index';
 
 afterEach(cleanup);
 
+// FIXME: Component with localization should be correcly tested
 it('Should render index page without crash', () => {
   const { getByText } = render(<Index />);
 
