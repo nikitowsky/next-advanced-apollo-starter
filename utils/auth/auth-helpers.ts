@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from 'react-apollo';
+import { useQuery } from 'react-apollo';
 import cookie from 'cookie';
 import { addMonths } from 'date-fns';
 
