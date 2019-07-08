@@ -2,7 +2,7 @@ import { render, cleanup, waitForElement } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 
 import Index from '../../pages/index';
-import I18Next from '../../utils/__mocks__/i18n';
+import I18Next from '../__mocks__/i18n';
 
 afterEach(cleanup);
 
