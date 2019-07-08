@@ -6,7 +6,6 @@ import I18Next from '../../utils/__mocks__/i18n';
 
 afterEach(cleanup);
 
-// FIXME: Component with localization should be correcly tested
 it('Should render index page without crash', async () => {
   const { getByText } = render(
     <I18nextProvider i18n={I18Next}>
