@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
+import { NextPageContext } from 'next';
 import { AppContext, AppProps } from 'next/app';
 import Head from 'next/head';
+import { NormalizedCacheObject } from 'apollo-boost';
 import { getDataFromTree } from 'react-apollo';
-import ApolloClient from 'apollo-client';
-import { NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { IncomingMessage } from 'http';
 import cookie from 'cookie';
 
 import initApollo from './initApollo';
 import isBrowser from './isBrowser';
-import { NextPageContext } from 'next';
+import { ApolloClientType } from './interfaces';
 
 export interface NextApolloAppProps {
   apolloState?: NormalizedCacheObject;
-  apolloClient: ApolloClient<NormalizedCacheObject>;
+  apolloClient: ApolloClientType;
 }
 
 const parseCookies = (req?: IncomingMessage, options = {}) => {
@@ -25,7 +25,7 @@ const parseCookies = (req?: IncomingMessage, options = {}) => {
 
 export default (App: any) => {
   return class WithData extends Component {
-    apolloClient: ApolloClient<NormalizedCacheObject>;
+    apolloClient: ApolloClientType;
 
     constructor(props: AppProps & NextApolloAppProps) {
       super(props);
