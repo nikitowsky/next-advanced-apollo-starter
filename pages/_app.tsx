@@ -9,21 +9,6 @@ import { appWithTranslation } from '../utils/i18n';
 import { AuthProvider } from '../utils/auth';
 
 class MyApp extends App<NextApolloAppProps> {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return {
-      pageProps: {
-        namespacesRequired: [],
-        ...pageProps,
-      },
-    };
-  }
-
   render() {
     const { Component, pageProps, apolloClient } = this.props;
 
