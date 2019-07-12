@@ -7,6 +7,7 @@ beforeAll(() => {
     if (/Warning.*not wrapped in act/.test(args[0])) {
       return;
     }
+
     originalError.call(console, ...args);
   };
 });
