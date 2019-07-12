@@ -16,22 +16,22 @@
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "@zeit/next-sass": "1.0.1",
-    "apollo-boost": "^0.4.3",
+    "apollo-boost": "0.4.3",
     "apollo-link-context": "1.0.18",
     "cookie": "0.4.0",
-    "date-fns": "^1.30.1",
-    "express": "^4.17.1",
+    "date-fns": "1.30.1",
+    "express": "4.17.1",
     "graphql": "14.4.2",
-    "isomorphic-unfetch": "^3.0.0",
+    "isomorphic-unfetch": "3.0.0",
     "jest": "24.8.0",
-    "next": "9.0.0",
+    "next": "9.0.1",
     "next-i18next": "0.45.0",
     "node-sass": "4.12.0",
     "normalize.css": "8.0.1",
     "react": "16.8.6",
     "react-apollo": "3.0.0-beta.3",
     "react-dom": "16.8.6",
-    "typescript": "3.5.2"
+    "typescript": "3.5.3"
   },
   "devDependencies": {
     "prettier": "1.18.2"
