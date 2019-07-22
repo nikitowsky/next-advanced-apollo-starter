@@ -2,7 +2,7 @@ import React, { createContext, useContext } from 'react';
 
 import { logout, useCurrentUserQuery } from './auth-helpers';
 
-interface TAuthContext {
+interface AuthContextType {
   data: any;
   isLoggedIn: boolean;
   logout(): void;
@@ -27,6 +27,6 @@ const AuthProvider = (props: any) => {
   );
 };
 
-const useAuth = () => useContext<TAuthContext>(AuthContext);
+const useAuth = () => useContext<AuthContextType>(AuthContext);
 
 export { AuthProvider, useAuth };
