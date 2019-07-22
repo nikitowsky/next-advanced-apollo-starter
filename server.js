@@ -1,6 +1,6 @@
 const express = require('express');
 const next = require('next');
-const nextI18NextMiddleware = require('next-i18next/middleware');
+const { default: nextI18NextMiddleware } = require('next-i18next/middleware');
 
 const I18Next = require('./utils/i18n/i18n');
 
