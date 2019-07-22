@@ -2,20 +2,23 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node",
+      "request": "launch",
+      "name": "Next: Node",
+      "runtimeExecutable": "node",
+      "program": "${workspaceFolder}/server.js",
+      "port": 9229,
+      "env": {
+        "NODE_OPTIONS": "--inspect"
+      },
+      "console": "integratedTerminal"
+    },
+    {
       "type": "chrome",
       "request": "launch",
       "name": "Next: Chrome",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Next: Node",
-      "runtimeExecutable": "next",
-      "runtimeArgs": ["--inspect"],
-      "port": 9229,
-      "console": "integratedTerminal"
     }
   ],
   "compounds": [
