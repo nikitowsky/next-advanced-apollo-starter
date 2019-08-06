@@ -51,17 +51,16 @@ import React from 'react';
 import { useAuth } from './utils/auth';
 
 const MyPage = () => {
-  const { data, isLoggedIn, logout } = useAuth();
+  const [{ data }, logout] = useAuth();
 
   const handleLogout = () => {
     logout(); // Removes token from cookies
-
     document.location.reload();
   };
 
   return (
     <div>
-      {isLoggedIn ? (
+      {data ? (
         <div>
           <div>Hello, {data.me.name}!</div>
           <button onClick={handleClick}>Log out</button>

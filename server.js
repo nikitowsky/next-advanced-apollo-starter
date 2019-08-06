@@ -2,7 +2,7 @@ const express = require('express');
 const next = require('next');
 const { default: nextI18NextMiddleware } = require('next-i18next/middleware');
 
-const I18Next = require('./utils/i18n/i18n');
+const nextI18next = require('./utils/i18n/i18n');
 
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV;
@@ -15,7 +15,7 @@ const main = async () => {
 
   const server = express();
 
-  server.use(nextI18NextMiddleware(I18Next));
+  server.use(nextI18NextMiddleware(nextI18next));
   server.get('*', (req, res) => handle(req, res));
 
   await server.listen(PORT);

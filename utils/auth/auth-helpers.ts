@@ -9,9 +9,7 @@ export interface LogInVariables {
   password: string;
 }
 
-const useCurrentUserQuery = () => {
-  return useQuery(GET_CURRENT_USER);
-};
+const useCurrentUserQuery = () => useQuery(GET_CURRENT_USER);
 
 const saveTokenInCookies = (token: string): void => {
   document.cookie = cookie.serialize('token', token, {
