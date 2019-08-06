@@ -14,7 +14,6 @@ interface Options {
 const create = (initialState = {}, { getToken }: Options) => {
   const httpLink = new HttpLink({
     uri: process.env.GRAPHQL_URL,
-    credentials: 'include',
     fetch: !isBrowser && fetch, // Polyfill fetch() on the server (used by apollo-client)
   });
 
