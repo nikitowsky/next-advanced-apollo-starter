@@ -9,10 +9,10 @@
     "test": "jest"
   },
   "dependencies": {
-    "@testing-library/react": "8.0.7",
+    "@testing-library/react": "8.0.8",
     "@types/cookie": "0.3.3",
     "@types/graphql": "14.2.3",
-    "@types/jest": "24.0.16",
+    "@types/jest": "24.0.17",
     "@types/react": "16.8.24",
     "@types/react-dom": "16.8.5",
     "@zeit/next-sass": "1.0.1",
@@ -25,11 +25,11 @@
     "isomorphic-unfetch": "3.0.0",
     "jest": "24.8.0",
     "next": "9.0.3",
-    "next-i18next": "0.52.1",
+    "next-i18next": "0.53.1",
     "node-sass": "4.12.0",
     "normalize.css": "8.0.1",
     "react": "16.8.6",
-    "react-apollo": "3.0.0-beta.4",
+    "react-apollo": "3.0.0",
     "react-dom": "16.8.6",
     "typescript": "3.5.3"
   },
