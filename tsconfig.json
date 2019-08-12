@@ -14,7 +14,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "target": "esnext",
-    "strict": false
+    "strict": false,
+    "types": ["jest", "cypress"]
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]

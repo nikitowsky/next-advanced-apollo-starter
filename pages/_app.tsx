@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { ApolloProvider } from 'react-apollo';
 
 import './_app.scss';
@@ -13,13 +13,11 @@ class MyApp extends App<NextApolloAppProps> {
     const { Component, pageProps, apolloClient } = this.props;
 
     return (
-      <Container>
-        <ApolloProvider client={apolloClient}>
-          <AuthProvider>
-            <Component {...pageProps} />
-          </AuthProvider>
-        </ApolloProvider>
-      </Container>
+      <ApolloProvider client={apolloClient}>
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
+      </ApolloProvider>
     );
   }
 }
