@@ -9,14 +9,14 @@
     "test": "jest"
   },
   "dependencies": {
-    "@testing-library/react": "8.0.9",
+    "@testing-library/react": "9.1.0",
     "@types/cookie": "0.3.3",
     "@types/graphql": "14.2.3",
     "@types/jest": "24.0.17",
     "@types/react": "16.9.1",
     "@types/react-dom": "16.8.5",
     "@zeit/next-sass": "1.0.1",
-    "apollo-boost": "0.4.3",
+    "apollo-boost": "0.4.4",
     "apollo-link-context": "1.0.18",
     "cookie": "0.4.0",
     "date-fns": "1.30.1",
