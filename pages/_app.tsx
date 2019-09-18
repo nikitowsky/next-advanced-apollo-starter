@@ -1,25 +1,14 @@
 import React from 'react';
 import App from 'next/app';
-import { ApolloProvider } from 'react-apollo';
 
-import './_app.scss';
-import { withApollo } from '../utils/apollo';
-import { NextApolloAppProps } from '../utils/apollo/withApollo';
-import { appWithTranslation } from '../utils/i18n';
-import { AuthProvider } from '../utils/auth';
+import { appWithTranslation } from '../lib/i18n';
 
-class MyApp extends App<NextApolloAppProps> {
+class MyApp extends App {
   render() {
-    const { Component, pageProps, apolloClient } = this.props;
+    const { Component, pageProps } = this.props;
 
-    return (
-      <ApolloProvider client={apolloClient}>
-        <AuthProvider>
-          <Component {...pageProps} />
-        </AuthProvider>
-      </ApolloProvider>
-    );
+    return <Component {...pageProps} />;
   }
 }
 
-export default appWithTranslation(withApollo(MyApp));
+export default appWithTranslation(MyApp);
