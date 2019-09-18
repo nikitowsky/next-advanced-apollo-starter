@@ -1,15 +1,21 @@
 import React from 'react';
+import { NextPage } from 'next';
+import { useApolloClient } from '@apollo/react-hooks';
 
-import { useTranslation } from '../utils/i18n';
+import { withApollo } from '../lib/apollo';
+import { useTranslation } from '../lib/i18n';
 
-const Index = () => {
+const IndexPage: NextPage = () => {
   const [t] = useTranslation('common');
+  const apolloClient = useApolloClient();
 
-  return <div>{t('greeting')}</div>;
+  return <div>{t('greeting', { version: apolloClient.version })}</div>;
 };
 
-Index.getInitialProps = () => ({
-  namespacesRequired: ['common'],
-});
+IndexPage.getInitialProps = async () => {
+  return {
+    namespacesRequired: ['common'],
+  };
+};
 
-export default Index;
+export default withApollo(IndexPage);
