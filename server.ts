@@ -2,7 +2,7 @@ import express from 'express';
 import next from 'next';
 import nextI18NextMiddleware from 'next-i18next/middleware';
 
-import nextI18next from './lib/i18n';
+import nextI18next from './src/lib/i18n';
 
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV;

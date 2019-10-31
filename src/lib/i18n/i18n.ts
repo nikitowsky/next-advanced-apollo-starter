@@ -8,7 +8,10 @@ const nextI18nOptions = {
 const languages = nextI18nOptions.otherLanguages;
 languages.push(nextI18nOptions.defaultLanguage);
 
-const NextI18NextInstance = new NextI18Next({ ...nextI18nOptions });
+const NextI18NextInstance = new NextI18Next({
+  ...nextI18nOptions,
+  localePath: '/src/locales',
+});
 
 if (
   NextI18NextInstance &&
