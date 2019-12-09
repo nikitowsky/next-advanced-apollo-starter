@@ -15,9 +15,7 @@ const main = async () => {
   const server = express();
 
   server.use(nextI18NextMiddleware(nextI18next));
-
   server.get('*', (req, res) => handle(req, res));
-
   server.listen(PORT);
 
   return `http://localhost:${PORT}`;

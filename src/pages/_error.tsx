@@ -7,16 +7,16 @@ interface ErrorPageProps {
 
 const ErrorPage: NextPage<ErrorPageProps> = ({ statusCode }) => {
   return (
-    <p>
+    <div>
       {statusCode
         ? `An error ${statusCode} occurred on server`
         : 'An error occurred on client'}
-    </p>
+    </div>
   );
 };
 
 ErrorPage.getInitialProps = async ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+  const statusCode = res?.statusCode ?? err?.statusCode;
 
   return {
     statusCode,
