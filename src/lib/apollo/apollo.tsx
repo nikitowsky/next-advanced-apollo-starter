@@ -1,14 +1,14 @@
-import { IncomingMessage } from 'http';
-import React, { useMemo } from 'react';
-import { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import fetch from 'isomorphic-unfetch';
-import cookie from 'cookie';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { NextPage } from 'next';
 import { ApolloClient } from 'apollo-client';
-import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
+import { ApolloProvider } from '@apollo/react-hooks';
 import { HttpLink } from 'apollo-link-http';
+import { IncomingMessage } from 'http';
+import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { setContext } from 'apollo-link-context';
+import cookie from 'cookie';
+import fetch from 'isomorphic-unfetch';
 
 /**
  * Creates and provides the apolloContext
@@ -17,15 +17,8 @@ import { setContext } from 'apollo-link-context';
  */
 export const withApollo = (PageComponent: NextPage, { ssr = true } = {}) => {
   const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
-    const client = useMemo(() => {
-      // We pass in the apolloClient directly when using getDataFromTree
-      if (apolloClient) {
-        return apolloClient;
-      }
+    const client = apolloClient || initApolloClient(apolloState, { getToken });
 
-      // Otherwise initClient using apolloState
-      return initApolloClient(apolloState, { getToken });
-    }, []);
     return (
       <ApolloProvider client={client}>
         <PageComponent {...pageProps} />
@@ -76,6 +69,7 @@ export const withApollo = (PageComponent: NextPage, { ssr = true } = {}) => {
           try {
             // Run all GraphQL queries
             const { getDataFromTree } = await import('@apollo/react-ssr');
+
             await getDataFromTree(
               <AppTree
                 pageProps={{
@@ -111,6 +105,7 @@ export const withApollo = (PageComponent: NextPage, { ssr = true } = {}) => {
 };
 
 type InitApolloClientOptions = [{}, { getToken: typeof getToken }];
+
 let apolloClient: ApolloClient<NormalizedCacheObject> = null;
 
 /**
@@ -152,7 +147,7 @@ const createApolloClient = (initialState = {}, { getToken }) => {
   }
 
   const httpLink = new HttpLink({
-    uri: 'https://stage-api.theamadei.com:8443', // Server URL (must be absolute)
+    uri: process.env.GRAPHQL_URL, // Server URL (must be absolute)
     credentials: 'same-origin',
     fetch,
     fetchOptions,
