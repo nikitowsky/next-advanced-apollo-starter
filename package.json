@@ -23,7 +23,7 @@
     "graphql-tag": "2.10.1",
     "https-proxy-agent": "3.0.1",
     "isomorphic-unfetch": "3.0.0",
-    "next": "9.1.5-canary.16",
+    "next": "9.1.5",
     "next-i18next": "2.1.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
