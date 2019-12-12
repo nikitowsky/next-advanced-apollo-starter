@@ -2,7 +2,6 @@ import React from 'react';
 import { NextPage } from 'next';
 import { useApolloClient } from '@apollo/react-hooks';
 
-import { withApollo } from '../lib/apollo';
 import { useTranslation } from '../lib/i18n';
 
 const IndexPage: NextPage = () => {
@@ -18,4 +17,4 @@ IndexPage.getInitialProps = async () => {
   };
 };
 
-export default withApollo(IndexPage);
+export default IndexPage;
