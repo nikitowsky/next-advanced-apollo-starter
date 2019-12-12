@@ -1,5 +1,15 @@
 # Next.js Apollo TypeScript starter with Docker
 
+- [What you get](#what-you-get)
+  - [Features](#features)
+  - [Developer experience](#developer-experience)
+- [Getting started](#getting-started)
+  - [Start development server](#start-development-server)
+  - [Run tests](#run-tests)
+- [Additional helpers](#additional-helpers)
+  - [useAuth()](#useauth-hook)
+- [Docker](#docker)
+
 ## What you get
 
 ### Features
@@ -11,7 +21,7 @@
 - Configured [Sass/SCSS](https://sass-lang.com/) via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
 - Built-in [helpers](#additional-helpers).
 
-### Developer Experience
+### Developer experience
 
 - Testing environment via [Jest](https://jestjs.io/) and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
 - [Prettier](https://prettier.io/) for code formatting.
@@ -22,14 +32,19 @@
 
 ### Start development server
 
+Before start using project you have to unstall dependencies by running _one of these commands_:
+
 ```bash
+# If you're using Yarn package mangaer:
 yarn
-yarn start
+
+# If you're using NPM package mangaer:
+npm install
 ```
 
-### Run tests
+### Tests
 
-Run tests located in `src/tests` directory:
+We are using [Jest](https://jestjs.io/) for testing. To run tests located in `src/tests` directory use `test` script from `package.json`:
 
 ```bash
 yarn test
@@ -39,9 +54,9 @@ yarn test
 
 Pretty much everything you need to know you can find in [Next.js documentation](https://nextjs.org/docs).
 
-## Additional Helpers
+## Additional helpers
 
-### `useAuth()` Hook
+### `useAuth()` hook
 
 This hook helps you to implement authentication. Here is an example how to use it:
 
