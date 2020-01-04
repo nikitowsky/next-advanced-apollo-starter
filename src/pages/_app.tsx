@@ -1,6 +1,8 @@
 import React from 'react';
 import App from 'next/app';
 
+import './_app.scss';
+
 import { withApollo } from '../lib/apollo';
 import { appWithTranslation } from '../lib/i18n';
 import { AuthProvider } from '../utils/auth';
