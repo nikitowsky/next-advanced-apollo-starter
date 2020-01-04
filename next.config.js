@@ -1,5 +1,7 @@
-module.exports = {
+const withSass = require('@zeit/next-sass');
+
+module.exports = withSass({
   env: {
-    GRAPHQL_URL: 'https://stage-api.theamadei.com:8443/graphql',
+    GRAPHQL_URL: 'https://example.com/graphql',
   },
-};
+});
