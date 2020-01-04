@@ -16,8 +16,8 @@
     "@types/cookie": "0.3.3",
     "@types/date-fns": "2.6.0",
     "@types/express": "4.17.2",
-    "@types/jest": "24.0.23",
-    "@types/react": "16.9.16",
+    "@types/jest": "24.0.25",
+    "@types/react": "16.9.17",
     "apollo-cache-inmemory": "1.6.5",
     "apollo-client": "2.6.8",
     "apollo-link-context": "1.0.19",
@@ -30,12 +30,12 @@
     "https-proxy-agent": "4.0.0",
     "isomorphic-unfetch": "3.0.0",
     "jest": "24.9.0",
-    "next": "9.1.6",
-    "next-i18next": "2.1.1",
+    "next": "9.1.7",
+    "next-i18next": "3.0.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "ts-node": "8.5.4",
-    "typescript": "3.7.3"
+    "typescript": "3.7.4"
   },
   "devDependencies": {
     "prettier": "1.19.1"
