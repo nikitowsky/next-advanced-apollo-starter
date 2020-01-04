@@ -7,7 +7,7 @@ export interface LogInVariables {
 }
 
 /**
- * Ideally server should send a cookie
+ * Ideally server should send a cookie header
  */
 const saveTokenInCookies = (token: string): void => {
   document.cookie = cookie.serialize('token', token, {
@@ -24,7 +24,7 @@ const removeTokenFromCookies = (): void => {
 };
 
 /**
- * Log out user
+ * Log out user by removing token from cookies
  */
 const logout = (): void => {
   removeTokenFromCookies();
