@@ -83,6 +83,53 @@ const MyPage = () => {
 };
 ```
 
+If you don't want to wrap whole application in authentication environment (for example, you may not want to do any authentication-based requests on `/login` page), you can use `withAuth` HOC on needed pages instead of using `AuthProvider` as global wrapper:
+
+`_app.tsx`:
+
+```diff
+import React from 'react';
+import App from 'next/app';
+
+import { withApollo } from '../lib/apollo';
+import { appWithTranslation } from '../lib/i18n';
+- import { AuthProvider } from '../utils/auth';
+
+class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props;
+
+    return (
+-      <AuthProvider>
+-        <Component {...pageProps} />
+-      </AuthProvider>
++     <Component {...pageProps} />
+    );
+  }
+}
+
+export default withApollo(appWithTranslation(MyApp));
+```
+
+Any page that required authentication:
+
+```diff
+import React from 'react';
+import { NextPage } from 'next';
+
+- import { useAuth } from '../utils/auth';
++ import { useAuth, withAuth } from '../utils/auth';
+
+const AuthenticationRequiredPage: NextPage = () => {
+  const [{ data }] = useAuth();
+
+  return <div>Hi, user with ID {data.me.id}!</div>;
+};
+
+- export default AuthenticationRequiredPage;
++ export default withAuth(AuthenticationRequiredPage);
+```
+
 ## Docker
 
 To build and run Dockerized **production-ready** container, run:
