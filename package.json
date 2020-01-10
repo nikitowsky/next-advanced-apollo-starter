@@ -24,7 +24,7 @@
     "apollo-link-context": "1.0.19",
     "apollo-link-http": "1.5.16",
     "cookie": "0.4.0",
-    "date-fns": "2.8.1",
+    "date-fns": "2.9.0",
     "express": "4.17.1",
     "graphql": "14.5.8",
     "graphql-tag": "2.10.1",
@@ -37,7 +37,7 @@
     "normalize.css": "8.0.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "ts-node": "8.5.4",
+    "ts-node": "8.6.0",
     "typescript": "3.7.4"
   },
   "devDependencies": {
