@@ -19,7 +19,7 @@ import fetch from 'isomorphic-unfetch';
  */
 const getToken = (req?: IncomingMessage, options = {}) => {
   const cookies = cookie.parse(
-    req ? req.headers.cookie || '' : document.cookie,
+    req?.headers?.cookie ?? document.cookie,
     options,
   );
 
