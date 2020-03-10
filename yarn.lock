@@ -1478,7 +1478,7 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"
   integrity sha512-FwI9gX75FgVBJ7ywgnq/P7tw+/o1GUbtP0KzbtusLigAOgIgNISRK0ZPl4qertvXSIE8YbsVJueQ90cDt9YYyw==
 
-"@types/morgan@^1.9.0":
+"@types/morgan@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@types/morgan/-/morgan-1.9.0.tgz#342119ae57fe67d36b91537143fc5aef16c2479f"
   integrity sha512-warrzirh5dlTMaETytBTKR886pRXwr+SMZD87ZE13gLMR8Pzz69SiYFkvoDaii78qGP1iyBIUYz5GiXyryO//A==
@@ -4404,6 +4404,11 @@ har-validator@~5.1.0:
     ajv "^6.5.5"
     har-schema "^2.0.0"
 
+harmony-reflect@^1.4.6:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/harmony-reflect/-/harmony-reflect-1.6.1.tgz#c108d4f2bb451efef7a37861fdbdae72c9bdefa9"
+  integrity sha512-WJTeyp0JzGtHcuMsi7rw2VwtkvLa+JyfEKJCFyfcS0+CDkjQ5lHPu7zEhFZP+PDSRrEgXa5Ah0l1MbgbE41XjA==
+
 has-ansi@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/has-ansi/-/has-ansi-2.0.0.tgz#34f5049ce1ecdf2b0649af3ef24e45ed35416d91"
@@ -4655,6 +4660,13 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   integrity sha512-4aFq7wvWyMHKgxsH8QQtGpvbASCf+eM3wPRLI6R+MgAnTCZ6STYsRvttLvRWK0Nfif5piF394St3HeJDaljGPA==
   dependencies:
     postcss "^7.0.14"
+
+identity-obj-proxy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/identity-obj-proxy/-/identity-obj-proxy-3.0.0.tgz#94d2bda96084453ef36fbc5aaec37e0f79f1fc14"
+  integrity sha1-lNK9qWCERT7zb7xarsN+D3nx/BQ=
+  dependencies:
+    harmony-reflect "^1.4.6"
 
 ieee754@^1.1.4:
   version "1.1.13"
@@ -6130,7 +6142,7 @@ mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-morgan@^1.9.1:
+morgan@1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.9.1.tgz#0a8d16734a1d9afbc824b99df87e738e58e2da59"
   integrity sha512-HQStPIV4y3afTiCYVxirakhlCfGkI161c76kKFca7Fk1JusM//Qeo1ej2XaMniiNeaZklMVrh3vTtIzpzwbpmA==
