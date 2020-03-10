@@ -19,4 +19,4 @@ class MyApp extends App {
   }
 }
 
-export default withApollo(appWithTranslation(MyApp));
+export default appWithTranslation(withApollo()(MyApp));

@@ -28,6 +28,8 @@ const AuthProvider: React.FC = ({ children }) => {
 
   // JWT token expired or any API-level errors, you can use redirects here
   if (error) {
+    console.log(error);
+
     return <ErrorPage statusCode={401} />;
   }
 
