@@ -11,7 +11,7 @@ const IndexPage: NextPage = () => {
   return <div>{t('greeting', { version: apolloClient.version })}</div>;
 };
 
-IndexPage.getInitialProps = async () => {
+IndexPage.getInitialProps = () => {
   return {
     namespacesRequired: ['common'],
   };
