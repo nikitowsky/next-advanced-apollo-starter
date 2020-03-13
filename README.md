@@ -20,6 +20,7 @@
 - Configured [TypeScript](https://www.typescriptlang.org/) environment.
 - Configured [Sass/SCSS](https://sass-lang.com/) via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
 - Built-in [helpers](#additional-helpers).
+- _No custom server_.
 
 ### Developer experience
 
