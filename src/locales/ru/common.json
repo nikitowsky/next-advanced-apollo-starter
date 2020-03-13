@@ -1,0 +1,3 @@
+{
+  "greetings": "Здравствуйте! Вы используете Apollo Client версии {{version}}"
+}

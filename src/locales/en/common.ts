@@ -1,3 +1,0 @@
-export default {
-  greetings: "Hi! You're using Apollo Client version {{version}}",
-};
