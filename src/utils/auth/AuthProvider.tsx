@@ -2,8 +2,8 @@ import React, { createContext, useContext } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
+import { logout } from './helpers';
 import ErrorPage from '../../pages/_error';
-import { logout } from './auth-helpers';
 
 // TODO: Set-up your real user query here
 const GET_CURRENT_USER = gql`
@@ -28,7 +28,7 @@ const AuthProvider: React.FC = ({ children }) => {
 
   // JWT token expired or any API-level errors, you can use redirects here
   if (error) {
-    console.log(error);
+    console.error(error);
 
     return <ErrorPage statusCode={401} />;
   }

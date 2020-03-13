@@ -18,4 +18,4 @@ ENV NODE_ENV ${NODE_ENV}
 
 RUN ["yarn", "build"]
 
-CMD ["yarn", "serve"]
+CMD ["yarn", "start"]
