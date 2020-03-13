@@ -1,4 +1,4 @@
-# Next.js Apollo TypeScript starter with Docker
+# Next.js advanced starter with Apollo, TypeScript, I18n, Docker and more...
 
 - [What you get](#what-you-get)
   - [Features](#features)
