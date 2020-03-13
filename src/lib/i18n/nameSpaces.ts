@@ -1,5 +1,5 @@
 enum NameSpace {
-  COMMON = "common"
+  COMMON = 'common',
 }
 
 export default NameSpace;
