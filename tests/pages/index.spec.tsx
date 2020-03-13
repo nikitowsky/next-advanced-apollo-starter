@@ -2,18 +2,18 @@ import { MockedProvider as ApolloMockedProvider } from '@apollo/react-testing';
 import { render, cleanup, waitForElement } from '@testing-library/react';
 
 import Index from '../../src/pages/index';
-import { MockedProvider as I18NMockedProvider } from '../mocks/i18n';
+import i18next from '../../src/lib/i18n';
 
 afterEach(cleanup);
 
-it('Should render index page without crash', async () => {
+i18next.changeLanguage('en');
+
+it('Should render index page', async () => {
   const { getByText } = render(
     <ApolloMockedProvider>
-      <I18NMockedProvider>
-        <Index />
-      </I18NMockedProvider>
+      <Index />
     </ApolloMockedProvider>,
   );
 
-  await waitForElement(() => getByText(/greeting/i));
+  await waitForElement(() => getByText(/Hi!/i));
 });
