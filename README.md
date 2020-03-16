@@ -16,7 +16,7 @@
 
 - Latest [Next.js](https://nextjs.org/) version.
 - GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in [JWT](https://jwt.io/) authentication.
-- Localization via [i18next](https://github.com/isaachinman/next-i18next/).
+- Localization via [react-i18next](https://react.i18next.com/).
 - Configured [TypeScript](https://www.typescriptlang.org/) environment.
 - Configured [Sass/SCSS](https://sass-lang.com/) via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
 - Built-in [helpers](#additional-helpers).
@@ -93,7 +93,6 @@ import React from 'react';
 import App from 'next/app';
 
 import { withApollo } from '../lib/apollo';
-import { appWithTranslation } from '../lib/i18n';
 - import { AuthProvider } from '../utils/auth';
 
 class MyApp extends App {
@@ -109,7 +108,7 @@ class MyApp extends App {
   }
 }
 
-export default withApollo(appWithTranslation(MyApp));
+export default withApollo(MyApp);
 ```
 
 Any page that required authentication:
