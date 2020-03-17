@@ -87,7 +87,7 @@ const initApolloClient = (
  * that provides the apolloContext
  * to a next.js Page or AppTree.
  */
-export const withApollo = ({ ssr = true }: InitialWithApolloParams = {}) => (
+export const withApollo = ({ ssr = false }: InitialWithApolloParams = {}) => (
   PageComponent: any,
 ) => {
   const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
@@ -122,6 +122,7 @@ export const withApollo = ({ ssr = true }: InitialWithApolloParams = {}) => (
 
       // Run wrapped getInitialProps methods
       let pageProps = {};
+
       if (PageComponent.getInitialProps) {
         pageProps = await PageComponent.getInitialProps(ctx);
       } else if (inAppContext) {
