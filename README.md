@@ -121,7 +121,7 @@ import { NextPage } from 'next';
 + import { useAuth, withAuth } from '../utils/auth';
 
 const AuthenticationRequiredPage: NextPage = () => {
-  const [{ data }] = useAuth();
+  const { data } = useAuth();
 
   return <div>Hi, user with ID {data.me.id}!</div>;
 };
