@@ -1,19 +1,18 @@
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 import { MockedProvider as ApolloMockedProvider } from '@apollo/react-testing';
-import { render, cleanup, waitForElement } from '@testing-library/react';
 
 import Index from '../../src/pages/index';
 import i18next from '../../src/lib/i18n';
 
-afterEach(cleanup);
-
 i18next.changeLanguage('en');
 
-it('Should render index page', async () => {
-  const { getByText } = render(
+it('Render index page', async () => {
+  render(
     <ApolloMockedProvider>
       <Index />
-    </ApolloMockedProvider>,
+    </ApolloMockedProvider>
   );
 
-  await waitForElement(() => getByText(/Hi!/i));
+  expect(screen.getByText(/Hi!/i)).toBeInTheDocument();
 });
