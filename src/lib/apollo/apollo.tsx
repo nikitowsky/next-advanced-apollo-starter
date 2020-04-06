@@ -6,7 +6,7 @@ import ApolloClient from 'apollo-client';
 import { NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { ApolloProvider } from '@apollo/react-hooks';
 
-import createApolloClient from './createApolloClient';
+import { createApolloClient } from './createApolloClient';
 
 interface InitialWithApolloParams {
   /** If server-side rendering enabled */
@@ -94,11 +94,11 @@ export const withApollo = ({ ssr = false }: InitialWithApolloParams = {}) => (
     let client: ApolloClient<NormalizedCacheObject>;
 
     if (apolloClient) {
-      // Happens on: getDataFromTree & next.js ssr
+      // Happens on: getDataFromTree & next.js SSR
       client = apolloClient;
     } else {
-      // Happens on: next.js csr
-      client = initApolloClient(apolloState, undefined);
+      // Happens on: next.js CSR
+      client = initApolloClient(apolloState, null);
     }
 
     return (
@@ -112,6 +112,7 @@ export const withApollo = ({ ssr = false }: InitialWithApolloParams = {}) => (
   if (process.env.NODE_ENV !== 'production') {
     const displayName =
       PageComponent.displayName || PageComponent.name || 'Component';
+
     WithApollo.displayName = `withApollo(${displayName})`;
   }
 
@@ -150,9 +151,9 @@ export const withApollo = ({ ssr = false }: InitialWithApolloParams = {}) => (
             let props = {};
 
             if (inAppContext) {
-              props = { ...pageProps, apolloClient }
+              props = { ...pageProps, apolloClient };
             } else {
-              props = { pageProps: { ...pageProps, apolloClient } }
+              props = { pageProps: { ...pageProps, apolloClient } };
             }
 
             // Take the Next.js AppTree, determine which queries are needed to render,

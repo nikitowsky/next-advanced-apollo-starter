@@ -9,7 +9,7 @@ const IndexPage: NextPage = () => {
   const { t } = useTranslation(NameSpace.COMMON);
   const apolloClient = useApolloClient();
 
-  return <div>{t('greetings', { version: apolloClient.version })}</div>;
+  return <div>{t('greetings', { version: apolloClient.version })} </div>;
 };
 
 export default IndexPage;

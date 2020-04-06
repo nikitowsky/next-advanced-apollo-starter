@@ -10,15 +10,17 @@ import cookie from 'cookie';
 /**
  * Get the user token from cookie
  */
-const getToken = (req?: IncomingMessage) => {
-  const cookies = cookie.parse(
-    req ? req.headers.cookie || '' : document.cookie,
+export const getToken = (req?: IncomingMessage) => {
+  console.log(req ? req.headers.cookie ?? '' : document.cookie);
+
+  const parsedCookie = cookie.parse(
+    req ? req.headers.cookie ?? '' : document.cookie,
   );
 
-  return cookies.token;
+  return parsedCookie.token;
 };
 
-const createApolloClient = (initialState = {}, ctx: NextPageContext) => {
+export const createApolloClient = (initialState = {}, ctx: NextPageContext) => {
   const fetchOptions = {
     agent: null,
   };
@@ -58,5 +60,3 @@ const createApolloClient = (initialState = {}, ctx: NextPageContext) => {
     cache: new InMemoryCache().restore(initialState),
   });
 };
-
-export default createApolloClient;
