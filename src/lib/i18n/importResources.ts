@@ -1,6 +1,4 @@
-import NameSpace from './nameSpaces';
-
-const importResources = (languages: string[], namespaces: NameSpace[]) => {
+const importResources = (languages: string[], namespaces: string[]) => {
   const resources = {};
 
   for (const language of languages) {
