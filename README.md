@@ -42,7 +42,7 @@ npm install
 
 ### Tests
 
-We are using [Jest](https://jestjs.io/) for testing. To run tests located in `src/tests` directory use `test` script from `package.json`:
+We are using [Jest](https://jestjs.io/) for testing. To run tests located in `/tests` directory use `test` script from `package.json`:
 
 ```bash
 yarn test
