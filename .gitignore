@@ -17,7 +17,6 @@
 
 # MISC
 .DS_Store
-.env*
 
 # Debug
 npm-debug.log*

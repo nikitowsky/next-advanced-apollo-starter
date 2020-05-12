@@ -7,7 +7,13 @@ const IndexPage: NextPage = () => {
   const [t] = useTranslation('common');
   const apolloClient = useApolloClient();
 
-  return <div>{t('greetings', { version: apolloClient.version })}</div>;
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: t('greetings', { version: apolloClient.version }),
+      }}
+    />
+  );
 };
 
 export default IndexPage;

@@ -36,7 +36,7 @@ export const createApolloClient = (initialState = {}, ctx: NextPageContext) => {
   }
 
   const httpLink = new HttpLink({
-    uri: process.env.GRAPHQL_URL, // Server URL (must be absolute)
+    uri: process.env.NEXT_PUBLIC_GRAPHQL_URL, // Server URL (must be absolute)
     credentials: 'same-origin',
     fetch,
     fetchOptions,
