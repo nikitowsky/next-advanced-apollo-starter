@@ -1,8 +1,6 @@
 import { IncomingMessage } from 'http';
 import { NextPageContext } from 'next';
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from 'apollo-link-context';
 import fetch from 'isomorphic-unfetch';
 import cookie from 'cookie';
@@ -11,8 +9,6 @@ import cookie from 'cookie';
  * Get the user token from cookie
  */
 export const getToken = (req?: IncomingMessage) => {
-  console.log(req ? req.headers.cookie ?? '' : document.cookie);
-
   const parsedCookie = cookie.parse(
     req ? req.headers.cookie ?? '' : document.cookie,
   );
@@ -56,6 +52,7 @@ export const createApolloClient = (initialState = {}, ctx: NextPageContext) => {
   return new ApolloClient({
     connectToDevTools: Boolean(ctx),
     ssrMode: Boolean(ctx),
+    // @ts-ignore
     link: authLink.concat(httpLink),
     cache: new InMemoryCache().restore(initialState),
   });

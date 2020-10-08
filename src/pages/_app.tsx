@@ -8,9 +8,7 @@ import { withApollo } from '../lib/apollo';
 
 i18n.init({
   ...initialI18nSettings,
-  /**
-   * Current language
-   */
+  // Current language
   lng: Language.EN,
 });
 
