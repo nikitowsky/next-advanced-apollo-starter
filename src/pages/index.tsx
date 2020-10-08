@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
-import { useApolloClient } from '@apollo/react-hooks';
+import { useApolloClient } from '@apollo/client';
 
 const IndexPage: NextPage = () => {
   const [t] = useTranslation('common');

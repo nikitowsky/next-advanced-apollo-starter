@@ -4,7 +4,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import ApolloClient from 'apollo-client';
 import { NormalizedCacheObject } from 'apollo-cache-inmemory';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 
 import { createApolloClient } from './createApolloClient';
 
@@ -144,7 +144,7 @@ export const withApollo = ({ ssr = false }: InitialWithApolloParams = {}) => (
           try {
             // Import `@apollo/react-ssr` dynamically.
             // We don't want to have this in our client bundle.
-            const { getDataFromTree } = await import('@apollo/react-ssr');
+            const { getDataFromTree } = await import('@apollo/client/react/ssr');
 
             // Since AppComponents and PageComponents have different context types
             // we need to modify their props a little.
