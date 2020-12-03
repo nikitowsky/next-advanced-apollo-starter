@@ -1,19 +1,24 @@
-import React from 'react';
 import { AppProps } from 'next/app';
+import { ApolloProvider } from '@apollo/client';
 
 import './_app.scss';
 
 import i18n, { initialI18nSettings, Language } from '../lib/i18n';
-import { withApollo } from '../lib/apollo';
+import { useApollo } from '../lib/apollo';
 
 i18n.init({
   ...initialI18nSettings,
-  // Current language
   lng: Language.EN,
 });
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />;
+const App = ({ Component, pageProps }: AppProps) => {
+  const apolloClient = useApollo(pageProps);
+
+  return (
+    <ApolloProvider client={apolloClient}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 };
 
-export default withApollo({ ssr: true })(MyApp);
+export default App;
