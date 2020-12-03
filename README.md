@@ -33,10 +33,10 @@
 Before start using project you have to unstall dependencies by running _one of these commands_:
 
 ```bash
-# If you're using Yarn package mangaer:
+# If you're using Yarn package manager:
 yarn
 
-# If you're using NPM package mangaer:
+# If you're using NPM package manager:
 npm install
 ```
 
