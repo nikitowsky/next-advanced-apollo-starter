@@ -13,7 +13,8 @@
 ### Features
 
 - Latest [Next.js](https://nextjs.org/) version.
-- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in [JWT](https://jwt.io/) authentication.
+- Latest packages updates.
+- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in cookie-based [JWT](https://jwt.io/) token authentication.
 - Localization via [react-i18next](https://react.i18next.com/).
 - Configured [TypeScript](https://www.typescriptlang.org/) environment.
 - Configured [Sass/SCSS](https://sass-lang.com/) via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
@@ -33,11 +34,21 @@
 Before start using project you have to unstall dependencies by running _one of these commands_:
 
 ```bash
-# If you're using Yarn package manager:
+# If you're using Yarn package manager
 yarn
 
-# If you're using NPM package manager:
+# If you're using NPM package manager
 npm install
+```
+
+After installation is ready, simply run:
+
+```bash
+# If you're using Yarn package manager
+yarn dev
+
+# If you're using NPM package manager
+npm run dev
 ```
 
 ### Tests
