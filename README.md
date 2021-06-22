@@ -34,21 +34,15 @@
 Before start using project you have to unstall dependencies by running _one of these commands_:
 
 ```bash
-# If you're using Yarn package manager
-yarn
-
-# If you're using NPM package manager
-npm install
+yarn # If you use Yarn package manager
+npm install # If you use NPM package manager
 ```
 
 After installation is ready, simply run:
 
 ```bash
-# If you're using Yarn package manager
-yarn dev
-
-# If you're using NPM package manager
-npm run dev
+yarn dev # Yarn
+npm run dev # NPM
 ```
 
 ### Tests
@@ -56,7 +50,8 @@ npm run dev
 We are using [Jest](https://jestjs.io/) for testing. To run tests located in `/tests` directory use `test` script from `package.json`:
 
 ```bash
-yarn test
+yarn test # Yarn
+npm test # NPM
 ```
 
 ---
