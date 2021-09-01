@@ -1,4 +1,4 @@
-# Next.js with GraphQL starter template
+# Advanced, but minimalistic Next.js + GraphQL starter
 
 > Simple and clean
 
