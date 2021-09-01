@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "chrome",
+      "type": "pwa-chrome",
       "request": "launch",
       "name": "Next: Chrome",
       "url": "http://localhost:3000",
