@@ -9,29 +9,29 @@
     "test": "jest"
   },
   "dependencies": {
-    "@apollo/client": "3.3.20",
+    "@apollo/client": "3.4.10",
     "@testing-library/jest-dom": "5.14.1",
-    "@testing-library/react": "11.2.7",
-    "@types/cookie": "0.4.0",
-    "@types/jest": "26.0.23",
-    "@types/react": "17.0.11",
+    "@testing-library/react": "12.0.0",
+    "@types/cookie": "0.4.1",
+    "@types/jest": "27.0.1",
+    "@types/react": "17.0.19",
     "apollo-link-context": "1.0.20",
-    "babel-jest": "27.0.5",
+    "babel-jest": "27.1.0",
     "babel-plugin-graphql-tag": "3.3.0",
     "cookie": "0.4.1",
-    "graphql": "15.5.1",
-    "graphql-tag": "2.12.4",
-    "i18next": "20.3.2",
-    "jest": "27.0.5",
-    "next": "11.0.1",
+    "graphql": "15.5.2",
+    "graphql-tag": "2.12.5",
+    "i18next": "20.5.0",
+    "jest": "27.1.0",
+    "next": "11.1.2",
     "normalize.css": "8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-i18next": "11.11.0",
-    "sass": "1.35.1",
-    "typescript": "4.3.4"
+    "react-i18next": "11.11.4",
+    "sass": "1.38.2",
+    "typescript": "4.4.2"
   },
   "devDependencies": {
-    "prettier": "2.3.1"
+    "prettier": "2.3.2"
   }
 }
