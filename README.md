@@ -1,4 +1,6 @@
-# Next.js Advanced Apollo Starter w/ Apollo Client 3, TypeScript, I18n, Docker and more...
+# Next.js with GraphQL starter template
+
+> Simple and clean
 
 - [What you get](#what-you-get)
   - [Features](#features)
@@ -31,14 +33,14 @@
 
 ### Start development server
 
-Before start using project you have to unstall dependencies by running _one of these commands_:
+In order to start development, you should run _one of these commands_:
 
 ```bash
 yarn # If you use Yarn package manager
-npm install # If you use NPM package manager
+npm install # Or if you use NPM package manager
 ```
 
-After installation is ready, simply run:
+After installation is complete, simply start development server:
 
 ```bash
 yarn dev # Yarn
@@ -47,7 +49,7 @@ npm run dev # NPM
 
 ### Tests
 
-We are using [Jest](https://jestjs.io/) for testing. To run tests located in `/tests` directory use `test` script from `package.json`:
+[Jest](https://jestjs.io/) is a great tool for testing. To run tests located in `/tests` directory, use `test` script from `package.json`:
 
 ```bash
 yarn test # Yarn
@@ -56,7 +58,7 @@ npm test # NPM
 
 ---
 
-Pretty much everything you need to know you can find in [Next.js documentation](https://nextjs.org/docs).
+Pretty much everything you need to know about project structure, SSR, etc., you can find in the [official Next.js documentation](https://nextjs.org/docs).
 
 ## Docker
 
