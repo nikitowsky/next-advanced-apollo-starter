@@ -100,7 +100,7 @@ export async function getServerSideProps() {
   const apolloClient = initializeApollo();
 
   const { data } = await apolloClient.query({
-    query: GET_DOGS,
+    query: GET_CATS,
   });
 
   return addApolloState(apolloClient, {
