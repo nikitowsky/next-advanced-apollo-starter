@@ -7,7 +7,10 @@
   - [Developer experience](#developer-experience)
 - [Getting started](#getting-started)
   - [Start development server](#start-development-server)
-  - [Run tests](#run-tests)
+  - [How to use Apollo](#how-to-use-apollo)
+    - [Client-side rendering (CSR)](#client-side-rendering-csr)
+    - [Server-side rendering (SSR)](#server-side-rendering-ssr)
+  - [Tests](#tests)
 - [Docker](#docker)
 
 ## What you get
@@ -36,15 +39,78 @@
 In order to start development, you should run _one of these commands_:
 
 ```bash
-yarn # If you use Yarn package manager
-npm install # Or if you use NPM package manager
+npm install
 ```
 
 After installation is complete, simply start development server:
 
 ```bash
-yarn dev # Yarn
-npm run dev # NPM
+npm run dev
+```
+
+### How to use Apollo
+
+#### Client-side rendering (CSR)
+
+```jsx
+import { gql, useQuery } from '@apollo/client';
+
+const GET_CATS = gql`
+  query GetCats {
+    cats {
+      id
+      breed
+    }
+  }
+`;
+
+const MyPage = () => {
+  const { loading, data } = useQuery(GET_CATS);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return <div>{JSON.stringify(data)}</div>;
+};
+
+export default MyPage;
+```
+
+#### Server-side rendering (SSR)
+
+```jsx
+import { gql } from '@apollo/client';
+import { initializeApollo, addApolloState } from '../lib/apollo';
+
+const GET_CATS = gql`
+  query GetCats {
+    cats {
+      id
+      breed
+    }
+  }
+`;
+
+const MyPage = (props) => {
+  return <div>{JSON.stringify(props.data)}</div>;
+};
+
+export async function getServerSideProps() {
+  const apolloClient = initializeApollo();
+
+  const { data } = await apolloClient.query({
+    query: GET_DOGS,
+  });
+
+  return addApolloState(apolloClient, {
+    props: {
+      data,
+    },
+  });
+}
+
+export default MyPage;
 ```
 
 ### Tests
@@ -52,8 +118,7 @@ npm run dev # NPM
 [Jest](https://jestjs.io/) is a great tool for testing. To run tests located in `/tests` directory, use `test` script from `package.json`:
 
 ```bash
-yarn test # Yarn
-npm test # NPM
+npm test
 ```
 
 ---
