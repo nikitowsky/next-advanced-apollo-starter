@@ -12,7 +12,7 @@ beforeAll(() => {
   });
 });
 
-it('Render index page', async () => {
+it('Renders index page', async () => {
   render(
     <ApolloMockedProvider>
       <Index />
