@@ -6,6 +6,7 @@ import type { IncomingMessage } from 'http';
 import type { NormalizedCacheObject } from '@apollo/client';
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import isEqual from 'lodash.isequal';
 
 interface PageProps {
   props?: Record<string, any>;
@@ -58,9 +59,16 @@ export function initializeApollo(initialState = null, ctx = null) {
     // Get existing cache, loaded during client side data fetching
     const existingCache = client.extract();
 
-    // Merge the existing cache into data passed from
-    // getStaticProps/getServerSideProps
-    const data = merge(initialState, existingCache);
+    // Merge the existing cache into data passed from getStaticProps/getServerSideProps
+    const data = merge(initialState, existingCache, {
+      // combine arrays using object equality (like in sets)
+      arrayMerge: (destinationArray, sourceArray) => [
+        ...sourceArray,
+        ...destinationArray.filter((d) =>
+          sourceArray.every((s) => !isEqual(d, s)),
+        ),
+      ],
+    });
 
     // Restore the cache with the merged data
     client.cache.restore(data);
