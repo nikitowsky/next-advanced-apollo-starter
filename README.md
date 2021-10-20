@@ -19,15 +19,19 @@
 
 - Latest [Next.js](https://nextjs.org/) version.
 - Latest packages updates.
-- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in cookie-based [JWT](https://jwt.io/) token authentication.
+- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in
+  cookie-based [JWT](https://jwt.io/) token authentication.
 - Localization via [react-i18next](https://react.i18next.com/).
 - Configured [TypeScript](https://www.typescriptlang.org/) environment.
-- Configured [Sass/SCSS](https://sass-lang.com/) via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
+- Configured [Sass/SCSS](https://sass-lang.com/)
+  via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (
+  plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
 - _No custom server_.
 
 ### Developer experience
 
-- Testing environment via [Jest](https://jestjs.io/) and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
+- Testing environment via [Jest](https://jestjs.io/)
+  and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
 - [Prettier](https://prettier.io/) for code formatting.
 - Debug configuration for [VSCode](https://code.visualstudio.com/).
 - [Docker](https://www.docker.com/) configuration to serve **production-ready** build with Nginx.
@@ -115,7 +119,8 @@ export default MyPage;
 
 ### Tests
 
-[Jest](https://jestjs.io/) is a great tool for testing. To run tests located in `/tests` directory, use `test` script from `package.json`:
+[Jest](https://jestjs.io/) is a great tool for testing. To run tests located in `/tests` directory, use `test` script
+from `package.json`:
 
 ```bash
 npm test
@@ -123,7 +128,8 @@ npm test
 
 ---
 
-Pretty much everything you need to know about project structure, SSR, etc., you can find in the [official Next.js documentation](https://nextjs.org/docs).
+Pretty much everything you need to know about project structure, SSR, etc., you can find in
+the [official Next.js documentation](https://nextjs.org/docs).
 
 ## Docker
 
