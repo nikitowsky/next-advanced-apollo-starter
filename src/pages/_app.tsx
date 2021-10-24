@@ -1,17 +1,13 @@
+import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client';
 
-import './_app.scss';
-
-import i18n, { initialI18nSettings, Language } from '../lib/i18n';
+import '../lib/i18n';
 import { useApollo } from '../lib/apollo';
 
-i18n.init({
-  ...initialI18nSettings,
-  lng: Language.EN,
-});
+import 'normalize.css/normalize.css';
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   const apolloClient = useApollo(pageProps);
 
   return (

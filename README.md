@@ -22,10 +22,8 @@
 - GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in
   cookie-based [JWT](https://jwt.io/) token authentication.
 - Localization via [react-i18next](https://react.i18next.com/).
-- Configured [TypeScript](https://www.typescriptlang.org/) environment.
-- Configured [Sass/SCSS](https://sass-lang.com/)
-  via [next-sass](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) for styling (
-  plus [Normalize.css](https://necolas.github.io/normalize.css/) included).
+- [TypeScript](https://www.typescriptlang.org/) environment.
+- [Normalize.css](https://necolas.github.io/normalize.css/) included.
 - _No custom server_.
 
 ### Developer experience

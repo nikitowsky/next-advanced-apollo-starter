@@ -1,35 +1,34 @@
-import i18n from 'i18next';
+import i18n, { InitOptions } from 'i18next';
+import resourcesToBackend from 'i18next-resources-to-backend';
 import { initReactI18next } from 'react-i18next';
 
 import Language from './languages';
-import importResources from './importResources';
 
-const nameSpaces = ['common'];
-const resources = importResources([Language.EN, Language.RU], nameSpaces);
-
-const initialI18nSettings = {
-  resources,
-  ns: nameSpaces,
-  defaultNS: 'common',
-  lng: Language.EN,
-  fallbackLng: Language.RU,
-  debug: false,
-  interpolation: {
-    escapeValue: false,
-  },
-  editor: {
-    onEditorSaved: async (lng, ns) => {
-      await i18n.reloadResources(lng, ns);
-      i18n.emit('editorSaved');
+i18n
+  .use(
+    resourcesToBackend((language, namespace, callback) => {
+      return callback(
+        null,
+        require(`../../locales/${language}/${namespace}.json`),
+      );
+    }),
+  )
+  .use(initReactI18next)
+  .init({
+    ns: ['common'],
+    initImmediate: false,
+    fallbackLng: Language.EN,
+    editor: {
+      onEditorSaved: async (lng, ns) => {
+        await i18n.reloadResources(lng, ns);
+        i18n.emit('editorSaved');
+      },
     },
-  },
-  react: {
-    bindI18n: 'languageChanged editorSaved',
-    useSuspense: false,
-  },
-};
+    react: {
+      bindI18n: 'languageChanged editorSaved',
+      useSuspense: false,
+    },
+  });
 
-i18n.use(initReactI18next);
-
-export { initialI18nSettings, Language };
+export { Language };
 export default i18n;
