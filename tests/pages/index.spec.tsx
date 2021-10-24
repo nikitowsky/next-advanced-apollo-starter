@@ -1,23 +1,53 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { MockedProvider as ApolloMockedProvider } from '@apollo/client/testing';
 
 import Index from '../../src/pages/index';
-import i18n, { initialI18nSettings, Language } from '../../src/lib/i18n';
+import i18n, { Language } from '../../src/lib/i18n';
 
-beforeAll(() => {
-  i18n.init({
-    ...initialI18nSettings,
-    lng: Language.EN,
+describe('Index page correctly renders in different locales', () => {
+  it('Initially renders in English language', () => {
+    i18n.init({ lng: Language.EN });
+
+    render(
+      <ApolloMockedProvider>
+        <Index />
+      </ApolloMockedProvider>,
+    );
+
+    expect(screen.getByText(/hi!/i)).toBeInTheDocument();
   });
-});
 
-it('Renders index page', async () => {
-  render(
-    <ApolloMockedProvider>
-      <Index />
-    </ApolloMockedProvider>,
-  );
+  it('Initially renders in Russian language', () => {
+    i18n.init({ lng: Language.RU });
 
-  expect(screen.getByText(/Hi!/i)).toBeInTheDocument();
+    render(
+      <ApolloMockedProvider>
+        <Index />
+      </ApolloMockedProvider>,
+    );
+
+    expect(screen.getByText(/привет!/i)).toBeInTheDocument();
+  });
+
+  it('Language switcher is working', () => {
+    i18n.init({ lng: Language.EN });
+
+    render(
+      <ApolloMockedProvider>
+        <Index />
+      </ApolloMockedProvider>,
+    );
+
+    const languageSwitcherButton = screen.getByRole('button', {
+      name: /change language/i,
+    });
+
+    expect(i18n.language).toBe(Language.EN);
+    expect(languageSwitcherButton).toBeInTheDocument();
+
+    fireEvent.click(languageSwitcherButton);
+
+    expect(i18n.language).toBe(Language.RU);
+  });
 });
