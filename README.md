@@ -1,19 +1,20 @@
-# Advanced, but minimalistic Next.js + GraphQL starter
+<h1 align="center">
+next-advanced-apollo-starter
+</h1>
 
-> Simple and clean
+<h4 align="center">
+  Advanced, but minimalistic Next.js and Apollo starter
+</h4>
 
-- [What you get](#what-you-get)
-  - [Features](#features)
-  - [Developer experience](#developer-experience)
-- [Getting started](#getting-started)
-  - [Start development server](#start-development-server)
-  - [How to use Apollo](#how-to-use-apollo)
-    - [Client-side rendering (CSR)](#client-side-rendering-csr)
-    - [Server-side rendering (SSR)](#server-side-rendering-ssr)
-  - [Tests](#tests)
-- [Docker](#docker)
+<p align="center">
+  <a href="#whats-included">What's included</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#apollo-usage">Apollo usage</a> •
+  <a href="#writing-tests">Writing tests</a> •
+  <a href="#docker-usage">Docker usage</a>
+</p>
 
-## What you get
+## What's included
 
 ### Features
 
@@ -50,9 +51,9 @@ After installation is complete, simply start development server:
 npm run dev
 ```
 
-### How to use Apollo
+## Apollo usage
 
-#### Client-side rendering (CSR)
+### Client-side rendering (CSR)
 
 ```jsx
 import { gql, useQuery } from '@apollo/client';
@@ -79,7 +80,7 @@ const MyPage = () => {
 export default MyPage;
 ```
 
-#### Server-side rendering (SSR)
+### Server-side rendering (SSR)
 
 ```jsx
 import { gql } from '@apollo/client';
@@ -115,7 +116,7 @@ export async function getServerSideProps() {
 export default MyPage;
 ```
 
-### Tests
+## Writing tests
 
 [Jest](https://jestjs.io/) is a great tool for testing. To run tests located in `/tests` directory, use `test` script
 from `package.json`:
@@ -129,7 +130,7 @@ npm test
 Pretty much everything you need to know about project structure, SSR, etc., you can find in
 the [official Next.js documentation](https://nextjs.org/docs).
 
-## Docker
+## Docker usage
 
 To build and run Dockerized **production-ready** container, run:
 
