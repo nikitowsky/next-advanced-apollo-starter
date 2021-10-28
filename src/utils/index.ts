@@ -1,1 +1,1 @@
-export * from './redirect';
+export { redirect } from './redirect';

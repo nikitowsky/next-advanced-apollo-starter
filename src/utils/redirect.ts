@@ -1,5 +1,5 @@
+import type { NextPageContext } from 'next';
 import Router from 'next/router';
-import { NextPageContext } from 'next';
 
 /**
  * Redirect function
@@ -7,7 +7,7 @@ import { NextPageContext } from 'next';
  * @param context Next.js context, need to perform redirect on server-side
  * @param target Address
  */
-export const redirect = (target: string, context?: NextPageContext) => {
+const redirect = (target: string, context?: NextPageContext) => {
   if (context?.res) {
     // Server, 303: "See other"
     context.res.writeHead(303, { Location: target });
@@ -16,3 +16,5 @@ export const redirect = (target: string, context?: NextPageContext) => {
     Router.replace(target);
   }
 };
+
+export { redirect };

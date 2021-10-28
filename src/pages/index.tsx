@@ -1,8 +1,8 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
 import { useApolloClient } from '@apollo/client';
 
-import i18n, { Language } from '../lib/i18n';
+import { i18n, Language } from '../lib/i18n';
 
 const IndexPage: NextPage = () => {
   const [t] = useTranslation('common');
