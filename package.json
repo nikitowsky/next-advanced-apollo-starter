@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@apollo/client": "3.5.5",
-    "@testing-library/jest-dom": "5.16.0",
     "apollo-link-context": "1.0.20",
     "cookie": "0.4.1",
     "graphql": "16.0.1",
@@ -25,6 +24,7 @@
     "react-i18next": "11.14.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "5.16.0",
     "@testing-library/react": "12.1.2",
     "@types/cookie": "0.4.1",
     "@types/jest": "27.0.3",
