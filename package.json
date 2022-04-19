@@ -9,31 +9,29 @@
     "test": "jest"
   },
   "dependencies": {
-    "@apollo/client": "3.5.5",
+    "@apollo/client": "3.5.10",
     "apollo-link-context": "1.0.20",
-    "cookie": "0.4.1",
-    "graphql": "16.0.1",
+    "cookie": "0.5.0",
+    "graphql": "16.3.0",
     "graphql-tag": "2.12.6",
-    "i18next": "21.5.4",
+    "i18next": "21.6.16",
     "i18next-resources-to-backend": "1.0.0",
     "lodash.isequal": "4.5.0",
-    "next": "12.0.5",
+    "next": "12.1.5",
     "normalize.css": "8.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-i18next": "11.14.3"
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-i18next": "11.16.7"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "5.16.0",
-    "@testing-library/react": "12.1.2",
-    "@types/cookie": "0.4.1",
-    "@types/jest": "27.0.3",
-    "@types/lodash.isequal": "4.5.5",
-    "@types/react": "17.0.37",
-    "babel-jest": "27.4.2",
-    "identity-obj-proxy": "3.0.0",
-    "jest": "27.4.3",
-    "prettier": "2.5.0",
-    "typescript": "4.5.2"
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "13.1.1",
+    "@types/cookie": "0.5.0",
+    "@types/jest": "27.4.1",
+    "@types/lodash.isequal": "4.5.6",
+    "@types/react": "18.0.5",
+    "jest": "27.5.1",
+    "prettier": "2.6.2",
+    "typescript": "4.6.3"
   }
 }
