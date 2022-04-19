@@ -53,7 +53,7 @@ npm run dev
 
 ## Apollo usage
 
-### Client-side rendering (CSR)
+### Client-Side Rendering (CSR)
 
 ```jsx
 import { gql, useQuery } from '@apollo/client';
@@ -80,7 +80,7 @@ const MyPage = () => {
 export default MyPage;
 ```
 
-### Server-side rendering (SSR)
+### Server-Side Rendering (SSR)
 
 ```jsx
 import { gql } from '@apollo/client';
@@ -118,8 +118,7 @@ export default MyPage;
 
 ## Writing tests
 
-[Jest](https://jestjs.io/) is a great tool for testing. To run tests located in `/tests` directory, use `test` script
-from `package.json`:
+[Jest](https://jestjs.io/) is a great tool for testing. To run tests simply use `test` script from `package.json`:
 
 ```bash
 npm test
