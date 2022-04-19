@@ -1,0 +1,6 @@
+{
+  "greetings": "Witam! Używasz Apollo Client w wersji <b>{{version}}</b>",
+  "controls": {
+    "change-language": "Zmień język"
+  }
+}
