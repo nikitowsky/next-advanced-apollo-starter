@@ -99,8 +99,8 @@ const MyPage = (props) => {
   return <div>{JSON.stringify(props.data)}</div>;
 };
 
-export async function getServerSideProps() {
-  const apolloClient = initializeApollo();
+export async function getServerSideProps(ctx) {
+  const apolloClient = initializeApollo(null, ctx);
 
   const { data } = await apolloClient.query({
     query: GET_CATS,
