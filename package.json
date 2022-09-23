@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "codegen": "env-cmd graphql-codegen --config .graphqlconfig.yml"
   },
   "dependencies": {
     "@apollo/client": "3.6.9",
@@ -21,13 +22,21 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.12.1",
+    "@graphql-codegen/near-operation-file-preset": "2.4.1",
+    "@graphql-codegen/schema-ast": "2.5.1",
+    "@graphql-codegen/typescript": "2.7.3",
+    "@graphql-codegen/typescript-operations": "2.5.3",
+    "@graphql-tools/jest-transform": "^1.2.2",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@types/cookie": "0.5.1",
     "@types/jest": "29.0.3",
     "@types/lodash.isequal": "4.5.6",
     "@types/react": "18.0.21",
+    "env-cmd": "^10.1.0",
     "jest": "29.0.3",
+    "jest-environment-jsdom": "^29.0.3",
     "prettier": "2.7.1",
     "typescript": "4.8.3"
   }

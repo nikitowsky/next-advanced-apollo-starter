@@ -1,0 +1,23 @@
+overwrite: true
+schema: ${NEXT_PUBLIC_GRAPHQL_URI}
+schemaPath: './src/__generated__/schema.graphql'
+documents: './src/graphql/**/*.graphql'
+extensions:
+  endpoints:
+    Mocki.io GraphQL Endpoint:
+      url: ${NEXT_PUBLIC_GRAPHQL_URI}
+      introspect: true
+generates:
+  ./src/__generated__/schema.graphql:
+    plugins:
+      - schema-ast
+  ./src/__generated__/schema.graphql.types.ts:
+    plugins:
+      - typescript
+  ./src/graphql/:
+    preset: 'near-operation-file'
+    presetConfig:
+      extension: '.graphql.types.ts'
+      baseTypesPath: '../__generated__/schema.graphql.types.ts'
+    plugins:
+      - 'typescript-operations'

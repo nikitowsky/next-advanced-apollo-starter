@@ -1,0 +1,62 @@
+""""""
+type Mutation {
+  """"""
+  updateTodo(
+    """Todo input"""
+    input: UpdateTodoInput!
+  ): Todo
+}
+
+""""""
+type Query {
+  """Get all todos"""
+  todos: [Todo]
+
+  """Get a user by id"""
+  user(
+    """The id of the user"""
+    id: String
+  ): User
+
+  """Get all users"""
+  users: [User]
+}
+
+""""""
+type Todo {
+  """"""
+  description: String
+
+  """"""
+  done: Boolean
+
+  """"""
+  id: String
+}
+
+""""""
+input UpdateTodoInput {
+  """"""
+  description: String
+
+  """"""
+  done: Boolean
+
+  """"""
+  id: String
+}
+
+""""""
+type User {
+  """"""
+  email: String
+
+  """"""
+  id: String
+
+  """"""
+  name: String
+
+  """"""
+  todos: [Todo]
+}
