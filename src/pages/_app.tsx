@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';
-import type { AppProps } from 'next/app';
+import { NextPage } from 'next';
+import { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client';
 
 import 'normalize.css/normalize.css';
