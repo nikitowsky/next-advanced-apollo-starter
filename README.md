@@ -30,6 +30,7 @@ next-advanced-apollo-starter
 
 - Testing environment via [Jest](https://jestjs.io/)
   and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
+- Configured [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen). Simply run `yarn codegen`.
 - [Prettier](https://prettier.io/) for code formatting.
 - Debug configuration for [VSCode](https://code.visualstudio.com/).
 - [Docker](https://www.docker.com/) configuration to serve **production-ready** build with Nginx.
@@ -41,33 +42,41 @@ next-advanced-apollo-starter
 In order to start development, you should run _one of these commands_:
 
 ```bash
-npm install
+yarn
 ```
 
 After installation is complete, simply start development server:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ## Apollo usage
 
 ### Client-Side Rendering (CSR)
 
-```jsx
-import { gql, useQuery } from '@apollo/client';
+```graphql
+# ./src/graphql/queries/cats.graphql
 
-const GET_CATS = gql`
-  query GetCats {
-    cats {
-      id
-      breed
-    }
+query cats {
+  cats {
+    id
+    breed
   }
-`;
+}
+```
 
-const MyPage = () => {
-  const { loading, data } = useQuery(GET_CATS);
+```tsx
+// ./src/pages/cats.tsx
+
+import { NextPage } from 'next';
+import { useQuery } from '@apollo/client';
+
+import CATS_QUERY from '../graphql/queries/cats.graphql';
+import { CatsQuery } from '../graphql/queries/cats.graphql.types';
+
+const CatsPage: NextPage = () => {
+  const { data, loading } = useQuery<CatsQuery>GET_CATS;
 
   if (loading) {
     return <div>Loading...</div>;
@@ -76,43 +85,44 @@ const MyPage = () => {
   return <div>{JSON.stringify(data)}</div>;
 };
 
-export default MyPage;
+export default CatsPage;
 ```
 
 ### Server-Side Rendering (SSR)
 
-```jsx
-import { gql } from '@apollo/client';
+```tsx
+// ./src/pages/cats.tsx
+
+import { NextPage } from 'next';
+
 import { initializeApollo, addApolloState } from '../lib/apollo';
+import CATS_QUERY from '../graphql/queries/cats.graphql';
+import { CatsQuery } from '../graphql/queries/cats.graphql.types';
+import { Cat } from '../__generated__/schema.graphql.types';
 
-const GET_CATS = gql`
-  query GetCats {
-    cats {
-      id
-      breed
-    }
-  }
-`;
+interface CatsPageProps {
+  cats: Cat[];
+}
 
-const MyPage = (props) => {
-  return <div>{JSON.stringify(props.data)}</div>;
+const CatsPage: NextPage<CatsPageProps> = ({ cats }) => {
+  return <div>{JSON.stringify(cats)}</div>;
 };
 
 export async function getServerSideProps(ctx) {
   const apolloClient = initializeApollo(null, ctx);
 
-  const { data } = await apolloClient.query({
+  const { data } = await apolloClient.query<CatsQuery>({
     query: GET_CATS,
   });
 
   return addApolloState(apolloClient, {
     props: {
-      data,
+      cats: data.cats,
     },
   });
 }
 
-export default MyPage;
+export default CatsPage;
 ```
 
 ## Writing tests
@@ -120,7 +130,7 @@ export default MyPage;
 [Jest](https://jestjs.io/) is a great tool for testing. To run tests simply use `test` script from `package.json`:
 
 ```bash
-npm test
+yarn test
 ```
 
 ---
