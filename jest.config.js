@@ -8,6 +8,9 @@ const createJestConfig = nextJest({
 
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  transform: {
+    '\\.(gql|graphql)$': '@graphql-tools/jest-transform',
+  },
   testEnvironment: 'jest-environment-jsdom',
 };
 
