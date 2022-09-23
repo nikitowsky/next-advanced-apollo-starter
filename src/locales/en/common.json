@@ -1,6 +1,0 @@
-{
-  "greetings": "Hi! You're using Apollo Client version <b>{{version}}</b>",
-  "controls": {
-    "change-language": "Change language"
-  }
-}
