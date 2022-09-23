@@ -22,7 +22,6 @@ next-advanced-apollo-starter
 - Latest packages updates.
 - GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in
   cookie-based [JWT](https://jwt.io/) token authentication.
-- Localization via [react-i18next](https://react.i18next.com/).
 - [TypeScript](https://www.typescriptlang.org/) environment.
 - [Normalize.css](https://necolas.github.io/normalize.css/) included.
 - _No custom server_.
