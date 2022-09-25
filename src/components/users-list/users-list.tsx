@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { User } from '../../__generated__/schema-types';
+import { User } from '../../__generated__/schema.graphql.types';
 
 interface UsersListProps {
   users: User[];
