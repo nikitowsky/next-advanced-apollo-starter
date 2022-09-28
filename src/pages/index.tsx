@@ -9,7 +9,6 @@ const IndexPage: NextPage = () => {
   return (
     <div>
       <p>Hello, you're using Apollo Client {apolloClient.version}</p>
-
       <UsersList />
     </div>
   );
