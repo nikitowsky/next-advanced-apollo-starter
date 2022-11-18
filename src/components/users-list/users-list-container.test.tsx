@@ -2,12 +2,12 @@ import { render, screen } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 
 import { UsersListContainer } from './users-list-container';
-import USERS_QUERY from '../../graphql/queries/users.graphql';
+import { UsersDocument } from '../../graphql/queries/users.graphql.interface';
 
 const MOCKS = [
   {
     request: {
-      query: USERS_QUERY,
+      query: UsersDocument,
     },
     result: {
       data: {
