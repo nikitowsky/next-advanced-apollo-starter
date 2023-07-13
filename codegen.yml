@@ -1,0 +1,15 @@
+overwrite: true
+schema: ${NEXT_PUBLIC_GRAPHQL_URI}
+documents: './src/graphql/**/*.graphql'
+generates:
+  ./src/graphql/__generated__/schema.graphql.ts:
+    plugins:
+      - typescript
+  ./src/graphql/:
+    preset: near-operation-file
+    presetConfig:
+      extension: '.graphql.interface.ts'
+      baseTypesPath: './__generated__/schema.graphql.ts'
+    plugins:
+      - typescript-operations
+      - typed-document-node

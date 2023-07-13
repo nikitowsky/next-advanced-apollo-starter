@@ -3,14 +3,14 @@ next-advanced-apollo-starter
 </h1>
 
 <h4 align="center">
-  Advanced, but minimalistic Next.js and Apollo starter
+  Advanced and minimalistic Next.js and Apollo starter
 </h4>
 
 <p align="center">
   <a href="#whats-included">What's included</a> •
   <a href="#getting-started">Getting Started</a> •
   <a href="#apollo-usage">Apollo usage</a> •
-  <a href="#writing-tests">Writing tests</a> •
+  <a href="#tests">Tests</a> •
   <a href="#docker-usage">Docker usage</a>
 </p>
 
@@ -22,6 +22,7 @@ next-advanced-apollo-starter
 - Latest packages updates.
 - GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in
   cookie-based [JWT](https://jwt.io/) token authentication.
+- Works both via _Client-Side Rendering_ and _Server-Side Rendering_;
 - [TypeScript](https://www.typescriptlang.org/) environment.
 - [Normalize.css](https://necolas.github.io/normalize.css/) included.
 - _No custom server_.
@@ -37,95 +38,22 @@ next-advanced-apollo-starter
 
 ## Getting started
 
-### Start development server
+No extra knowledge needed to get started, see [Next.js documentation](https://nextjs.org/docs).
 
-In order to start development, you should run _one of these commands_:
+## GraphQL Code Generation
 
-```bash
-yarn
-```
-
-After installation is complete, simply start development server:
+Generated interfaces for co-located _.graphql_ files. See the [example](./src/graphql/queries).
 
 ```bash
-yarn dev
+yarn codegen
 ```
 
 ## Apollo usage
 
-### Client-Side Rendering (CSR)
+- [Client-Side Rendering (CSR) example](./src/pages/users-csr.tsx).
+- [Server-Side Rendering (SSR) example](./src/pages/users-ssr.tsx).
 
-```graphql
-# ./src/graphql/queries/cats.graphql
-
-query cats {
-  cats {
-    id
-    breed
-  }
-}
-```
-
-```tsx
-// ./src/pages/cats.tsx
-
-import { NextPage } from 'next';
-import { useQuery } from '@apollo/client';
-
-import CATS_QUERY from '../graphql/queries/cats.graphql';
-import { CatsQuery } from '../graphql/queries/cats.graphql.types';
-
-const CatsPage: NextPage = () => {
-  const { data, loading } = useQuery<CatsQuery>GET_CATS;
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  return <div>{JSON.stringify(data)}</div>;
-};
-
-export default CatsPage;
-```
-
-### Server-Side Rendering (SSR)
-
-```tsx
-// ./src/pages/cats.tsx
-
-import { NextPage } from 'next';
-
-import { initializeApollo, addApolloState } from '../lib/apollo';
-import CATS_QUERY from '../graphql/queries/cats.graphql';
-import { CatsQuery } from '../graphql/queries/cats.graphql.types';
-import { Cat } from '../__generated__/schema.graphql.types';
-
-interface CatsPageProps {
-  cats: Cat[];
-}
-
-const CatsPage: NextPage<CatsPageProps> = ({ cats }) => {
-  return <div>{JSON.stringify(cats)}</div>;
-};
-
-export async function getServerSideProps(ctx) {
-  const apolloClient = initializeApollo(null, ctx);
-
-  const { data } = await apolloClient.query<CatsQuery>({
-    query: GET_CATS,
-  });
-
-  return addApolloState(apolloClient, {
-    props: {
-      cats: data.cats,
-    },
-  });
-}
-
-export default CatsPage;
-```
-
-## Writing tests
+## Tests
 
 [Jest](https://jestjs.io/) is a great tool for testing. To run tests simply use `test` script from `package.json`:
 
