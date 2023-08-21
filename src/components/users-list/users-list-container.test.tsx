@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 
 import { UsersListContainer } from './users-list-container';
@@ -30,7 +31,10 @@ describe('UsersList', () => {
       </MockedProvider>,
     );
 
-    expect(await screen.findByText('Users loading...')).toBeInTheDocument();
-    expect(await screen.findByText('user@example.com')).toBeInTheDocument();
+    expect(screen.getByText(/Users loading.../i)).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByText(/user@example.com/i)).toBeInTheDocument();
+    });
   });
 });
