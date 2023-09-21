@@ -13,7 +13,7 @@
     "@apollo/client": "3.8.1",
     "apollo-link-context": "1.0.20",
     "cookie": "0.5.0",
-    "graphql": "16.8.0",
+    "graphql": "16.8.1",
     "lodash.isequal": "4.5.0",
     "next": "13.4.19",
     "normalize.css": "8.0.1",
