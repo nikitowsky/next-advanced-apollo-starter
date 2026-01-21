@@ -3,7 +3,7 @@ next-advanced-apollo-starter
 </h1>
 
 <h4 align="center">
-  Advanced and minimalistic Next.js and Apollo starter
+  Advanced, but minimalistic Next.js and Apollo starter
 </h4>
 
 <p align="center">
