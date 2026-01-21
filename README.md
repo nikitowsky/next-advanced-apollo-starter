@@ -27,9 +27,9 @@ next-advanced-apollo-starter
 
 ### Developer experience
 
-- Testing environment via [Jest](https://jestjs.io/)
+- Testing environment via [Vitest](https://vitest.dev/).
   and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
-- Configured [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen). Simply run `npm run codegen`.
+- Configured [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen).
 - [Prettier](https://prettier.io/) for code formatting.
 
 ## Getting started

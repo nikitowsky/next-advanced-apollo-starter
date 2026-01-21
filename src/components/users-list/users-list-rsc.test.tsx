@@ -1,16 +1,17 @@
+import type { MockedFunction } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { query } from "@app/lib/apollo";
 import { UsersListContainer } from "./users-list-rsc";
 
-jest.mock("@app/lib/apollo", () => ({
-  query: jest.fn(),
+vi.mock("@app/lib/apollo", () => ({
+  query: vi.fn(),
 }));
 
-const mockQuery = query as jest.MockedFunction<typeof query>;
+const mockQuery = query as MockedFunction<typeof query>;
 
 describe("UsersList React Server Component", () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("should render list of users", async () => {
