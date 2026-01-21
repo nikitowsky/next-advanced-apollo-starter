@@ -43,7 +43,7 @@ next-advanced-apollo-starter
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/next-advanced-apollo-starter.git
+git clone git@github.com:nikitowsky/next-advanced-apollo-starter.git
 cd next-advanced-apollo-starter
 ```
 
