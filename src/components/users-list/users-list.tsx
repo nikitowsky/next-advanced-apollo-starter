@@ -1,4 +1,4 @@
-import { User } from "@app/graphql/__generated__/schema.graphql";
+import { User } from "@app/data/schema.graphql";
 
 interface UsersListProps {
   users: User[];

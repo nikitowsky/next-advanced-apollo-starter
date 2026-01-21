@@ -1,9 +1,9 @@
 "use client";
 
 import { Suspense } from "react";
-import { User } from "@app/graphql/__generated__/schema.graphql";
+import { User } from "@app/data/schema.graphql";
 import { useSuspenseQuery } from "@apollo/client/react";
-import { UsersDocument, UsersQuery } from "./users.graphql.interface";
+import { UsersDocument, UsersQuery } from "./queries/users.graphql.interface";
 import { UsersList } from "./users-list";
 
 const UsersListDataContainer = () => {

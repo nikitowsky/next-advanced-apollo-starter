@@ -1,6 +1,6 @@
-import { User } from "@app/graphql/__generated__/schema.graphql";
+import { User } from "@app/data/schema.graphql";
 import { query } from "@app/lib/apollo";
-import { UsersDocument, UsersQuery } from "./users.graphql.interface";
+import { UsersDocument, UsersQuery } from "./queries/users.graphql.interface";
 import { UsersList } from "./users-list";
 
 export const UsersListContainer = async () => {

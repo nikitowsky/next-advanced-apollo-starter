@@ -1,4 +1,4 @@
-import * as Types from '../../graphql/__generated__/schema.graphql';
+import * as Types from '../../../data/schema.graphql';
 
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type UsersQueryVariables = Types.Exact<{ [key: string]: never; }>;

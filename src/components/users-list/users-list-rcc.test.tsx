@@ -1,7 +1,7 @@
 import { render, screen, waitFor, act } from "@testing-library/react";
 import { MockedProvider } from "@apollo/client/testing/react";
 import { UsersListContainer } from "./users-list-rcc";
-import { UsersDocument } from "./users.graphql.interface";
+import { UsersDocument } from "./queries/users.graphql.interface";
 
 const createMocks = () => [
   {
