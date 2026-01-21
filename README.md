@@ -11,18 +11,16 @@ next-advanced-apollo-starter
   <a href="#getting-started">Getting Started</a> •
   <a href="#apollo-usage">Apollo usage</a> •
   <a href="#tests">Tests</a> •
-  <a href="#docker-usage">Docker usage</a>
 </p>
 
 ## What's included
 
 ### Features
 
-- Latest [Next.js](https://nextjs.org/) version.
+- Latest [Next.js](https://nextjs.org/) version with [App Router](https://nextjs.org/docs/app/guides/migrating/app-router-migration).
+- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client.
 - Latest packages updates.
-- GraphQL [Apollo](https://www.apollographql.com/docs/react/essentials/get-started/) client with built-in
-  cookie-based [JWT](https://jwt.io/) token authentication.
-- Works both via _Client-Side Rendering_ and _Server-Side Rendering_;
+- Works with _React Server Components_ and _React Client Components_ (with or without SSR);
 - [TypeScript](https://www.typescriptlang.org/) environment.
 - [Normalize.css](https://necolas.github.io/normalize.css/) included.
 - _No custom server_.
@@ -31,10 +29,9 @@ next-advanced-apollo-starter
 
 - Testing environment via [Jest](https://jestjs.io/)
   and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
-- Configured [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen). Simply run `yarn codegen`.
+- Configured [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen). Simply run `npm run codegen`.
 - [Prettier](https://prettier.io/) for code formatting.
 - Debug configuration for [VSCode](https://code.visualstudio.com/).
-- [Docker](https://www.docker.com/) configuration to serve **production-ready** build with Nginx.
 
 ## Getting started
 
@@ -42,16 +39,22 @@ No extra knowledge needed to get started, see [Next.js documentation](https://ne
 
 ## GraphQL Code Generation
 
-Generated interfaces for co-located _.graphql_ files. See the [example](./src/graphql/queries).
+Generated interfaces for co-located _.graphql_ files. See the [example](./src/components/users-list). For demonstration puproses, we use this `.env.local`:
+
+```dotenv
+NEXT_PUBLIC_GRAPHQL_URI=https://graphqlzero.almansi.me/api
+```
+
+To generate TypeScript interfaces based on GraphQL schema and used queries/mutations:
 
 ```bash
-yarn codegen
+npm run codegen
 ```
 
 ## Apollo usage
 
-- [Client-Side Rendering (CSR) example](./src/pages/users-csr.tsx).
-- [Server-Side Rendering (SSR) example](./src/pages/users-ssr.tsx).
+- [React Server Components (RSC) example](./src/components/users-list/users-list-rcc.tsx).
+- [React Client Components (RCC) example](./src/components/users-list/users-list-rsc.tsx).
 
 ## Tests
 
@@ -63,13 +66,5 @@ yarn test
 
 ---
 
-Pretty much everything you need to know about project structure, SSR, etc., you can find in
+Pretty much everything you need to know about project structure, React Server Components (RSC), React Client Components (RCC), etc., you can find in
 the [official Next.js documentation](https://nextjs.org/docs).
-
-## Docker usage
-
-To build and run Dockerized **production-ready** container, run:
-
-```bash
-docker-compose up --build
-```
