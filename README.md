@@ -31,7 +31,6 @@ next-advanced-apollo-starter
   and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro).
 - Configured [GraphQL Code Generator](https://www.the-guild.dev/graphql/codegen). Simply run `npm run codegen`.
 - [Prettier](https://prettier.io/) for code formatting.
-- Debug configuration for [VSCode](https://code.visualstudio.com/).
 
 ## Getting started
 
